@@ -20,4 +20,19 @@ public class Orders {
 
         return orders.get(i);
     }
+
+
+    public void ordersToString(StringBuffer sb){
+
+        for (int i = 0; i < this.getOrdersCount(); i++) {
+            Order order = this.getOrder(i);
+
+            order.orderToString(sb);
+        }
+
+        if (this.getOrdersCount() > 0) {
+            sb.delete(sb.length() - 2, sb.length());
+        }
+
+    }
 }
