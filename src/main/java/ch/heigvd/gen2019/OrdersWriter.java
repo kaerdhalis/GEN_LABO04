@@ -20,26 +20,7 @@ public class OrdersWriter {
             sb.append("\"products\": [");
             for (int j = 0; j < order.getProductsCount(); j++) {
 
-                sb.append("{");
-                sb.append("\"code\": \"");
-                sb.append(order.getProduct(j).getCode());
-                sb.append("\", ");
-                sb.append("\"color\": \"");
-                sb.append(order.getProduct(j).getColor());
-                sb.append("\", ");
-
-                if (order.getProduct(j).getSize() != Size.SIZE_NOT_APPLICABLE) {
-                    sb.append("\"size\": \"");
-                    sb.append(order.getProduct(j).getSize());
-                    sb.append("\", ");
-                }
-
-                sb.append("\"price\": ");
-                sb.append(order.getProduct(j).getPrice());
-                sb.append(", ");
-                sb.append("\"currency\": \"");
-                sb.append(order.getProduct(j).getCurrency());
-                sb.append("\"}, ");
+                order.getProduct(j).productToString(sb);
             }
 
             if (order.getProductsCount() > 0) {
