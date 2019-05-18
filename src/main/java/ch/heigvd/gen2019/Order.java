@@ -30,4 +30,13 @@ public class Order {
 
         products.add(product);
     }
+
+    public void orderToString(StringBuffer sb){
+
+        sb.append("{");
+        sb.append("\"id\": ");
+        sb.append(this.getOrderId());
+        sb.append(", ");
+        sb.append("\"products\": [");
+    }
 }
