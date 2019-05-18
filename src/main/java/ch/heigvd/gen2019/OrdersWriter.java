@@ -15,17 +15,6 @@ public class OrdersWriter {
             Order order = orders.getOrder(i);
 
             order.orderToString(sb);
-            for (int j = 0; j < order.getProductsCount(); j++) {
-
-                order.getProduct(j).productToString(sb);
-            }
-
-            if (order.getProductsCount() > 0) {
-                sb.delete(sb.length() - 2, sb.length());
-            }
-
-            sb.append("]");
-            sb.append("}, ");
         }
 
         if (orders.getOrdersCount() > 0) {

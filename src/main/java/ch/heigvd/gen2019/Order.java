@@ -38,5 +38,17 @@ public class Order {
         sb.append(this.getOrderId());
         sb.append(", ");
         sb.append("\"products\": [");
+
+        for (int j = 0; j < this.getProductsCount(); j++) {
+
+            this.getProduct(j).productToString(sb);
+        }
+
+        if (this.getProductsCount() > 0) {
+            sb.delete(sb.length() - 2, sb.length());
+        }
+
+        sb.append("]");
+        sb.append("}, ");
     }
 }
