@@ -11,15 +11,7 @@ public class OrdersWriter {
     public String getContents() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
-        for (int i = 0; i < orders.getOrdersCount(); i++) {
-            Order order = orders.getOrder(i);
-
-            order.orderToString(sb);
-        }
-
-        if (orders.getOrdersCount() > 0) {
-            sb.delete(sb.length() - 2, sb.length());
-        }
+        orders.ordersToString(sb);
 
         return sb.append("]}").toString();
     }
