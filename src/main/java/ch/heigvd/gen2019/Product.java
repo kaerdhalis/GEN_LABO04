@@ -40,4 +40,29 @@ public class Product {
 
         return currency;
     }
+
+
+    public void productToString(StringBuffer sb){
+
+        sb.append("{");
+        sb.append("\"code\": \"");
+        sb.append(this.getCode());
+        sb.append("\", ");
+        sb.append("\"color\": \"");
+        sb.append(this.getColor());
+        sb.append("\", ");
+
+        if (this.getSize() != Size.SIZE_NOT_APPLICABLE) {
+            sb.append("\"size\": \"");
+            sb.append(this.getSize());
+            sb.append("\", ");
+        }
+
+        sb.append("\"price\": ");
+        sb.append(this.getPrice());
+        sb.append(", ");
+        sb.append("\"currency\": \"");
+        sb.append(this.getCurrency());
+        sb.append("\"}, ");
+    }
 }
