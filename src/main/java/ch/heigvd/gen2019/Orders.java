@@ -35,4 +35,12 @@ public class Orders {
         }
 
     }
+
+    public String getContents() {
+        StringBuffer sb = new StringBuffer("{\"orders\": [");
+
+        this.ordersToString(sb);
+
+        return sb.append("]}").toString();
+    }
 }
